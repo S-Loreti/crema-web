@@ -77,7 +77,7 @@ const CafeCard = () => {
                             </div>
                     
                             <div className="col-md-4">
-                                <img src={require(`/Users/sebastianoloreti/Code/FAR-Test/React/finance-app/src/ExteriorPhotos/${cafe.cafe_photo}`)} style={{width: '300px', height: '200px'}} className="img-fluid rounded-start" alt={cafe.cafe_name}/>
+                                <img src={require(`./ExteriorPhotos/${cafe.cafe_photo}`)} style={{width: '300px', height: '200px'}} className="img-fluid rounded-start" alt={cafe.cafe_name}/>
                             </div>
                         </div>
                     </div>
