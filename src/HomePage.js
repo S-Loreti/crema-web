@@ -35,7 +35,7 @@ const HomePage = () => {
                     <a href="/Shop">
                         <img style={{ width: '100%', height: 'auto', borderRadius: '10px', marginBottom: '10px' }} src={require(`./Homepage/Shop.png`)} alt="Event Calendar" />
                     </a>
-                    <p style={{ color: '#777' }}>A schedule of upcoming coffee-related events, workshops, tastings, and pop-ups in the Bay Area.</p>
+                    <p style={{ color: '#777' }}>Find products from all your favorite local shops and roasters.</p>
                 </div>
             </div>
             <div style={{ marginTop: '30px', padding: '30px', backgroundColor: '#ffffff', borderRadius: '10px' }}>
