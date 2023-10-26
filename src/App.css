@@ -8,12 +8,16 @@
   color: #61dafb;
 }
 
-.navbar-brand {
+/* .navbar-brand {
   font-family: 'Sacramento', cursive;
   font-size: 3.25rem;
   padding-top: 0;
   padding-bottom: 0;
   text-decoration: underline 2px;
+} */
+
+.nav-item a:hover {
+  text-decoration: underline;
 }
 
 .marker {

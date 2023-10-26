@@ -43,17 +43,18 @@ const CafeCard = () => {
                                 </a>
                             ))}
                         </div>
-                        <p>{ cafeTotal } Results Found</p>
+                        <p>{ cafeTotal } Cafés Found</p>
                 </div>
-                
-                    
                 {filteredCafes.map((cafe) => (
                     <div key={cafe.id} className="card mb-3 shadow-sm" style={{ overflow: 'scroll'}}>
                         <div className="row g-0">
                             <div className="col-md-8">
                                 <div className="card-body">
-                                    <h5 className="card-title mb-4" style={{fontSize: "25px", fontFamily: 'Verdana', fontSize: '2rem', fontWeight: '200'}}>{cafe.cafe_name}</h5>
-
+                                    <h5 className="card-title mb-4" style={{fontSize: "25px", fontFamily: 'Verdana', fontSize: '2rem', fontWeight: '200'}}>
+                                            <img width="" height="27px" 
+                                                src={require(`/Users/sebastianoloreti/Code/FAR-Test/React/finance-app/src/bean-icon.png`)} />
+                                                {' '}{cafe.cafe_name}
+                                        </h5>
                                     <div className="row">
                                         <div className="col-md-6 mb-1">
                                             <p className="card-text mb-0">{cafe.cafe_address}</p>
@@ -64,9 +65,7 @@ const CafeCard = () => {
                                             <DisplayHours hoursString={cafe.cafe_hours} />
                                         </small>
                                         </div>
-                                        
                                     </div>
-
                                     <div className="row">
                                         <div className="col-md-6">
                                             <p className="card-text mb-0"><Phone/>{" "}{cafe.cafe_phone}</p>
@@ -75,7 +74,6 @@ const CafeCard = () => {
                                     </div>
                                 </div>
                             </div>
-                    
                             <div className="col-md-4">
                                 <img src={require(`./ExteriorPhotos/${cafe.cafe_photo}`)} style={{width: '300px', height: '200px'}} className="img-fluid rounded-start" alt={cafe.cafe_name}/>
                             </div>
@@ -83,7 +81,7 @@ const CafeCard = () => {
                     </div>
                 ))}
             </div>
-            <div className="col-4" style={{position: 'fixed', top: '140px', right: '10px', width: 'calc(100% - 66.66667%)', height: '80vh'}}>
+            <div className="col-4" style={{position: 'fixed', top: '190px', right: '10px', width: 'calc(100% - 66.66667%)', height: '80vh'}}>
                     <CafeMap />
             </div>
         </div>

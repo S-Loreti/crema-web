@@ -30,7 +30,7 @@ const CafeMap = () => {
           <Marker 
             longitude={cafe.cafe_long} 
             latitude={cafe.cafe_lat} 
-            color="#A1887F"
+            color="#9CB2A6"
             onClick={() => setActiveCafe(cafe)}
           />
           {activeCafe && activeCafe.id === cafe.id && (
