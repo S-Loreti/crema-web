@@ -7,7 +7,7 @@ const NavBar = () => {
             <div className="container-fluid" style={{ display: 'flex', justifyContent: 'space-between', flexDirection: 'column' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                     <a className="navbar-brand" href="/" style={{borderBottom: '1px solid #111516' }}>
-                        <img width="225px" src={require(`/Users/sebastianoloreti/Code/FAR-Test/React/finance-app/src/header1.png`)} alt="Brand Logo" />
+                        <img width="225px" src={require(`./header1.png`)} alt="Brand Logo" />
                     </a>
                     <div></div>
                 </div>
