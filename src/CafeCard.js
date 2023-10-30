@@ -61,7 +61,7 @@ const CafeCard = () => {
                         style={{ 
                                 overflow: 'scroll', 
                                 backgroundColor: activeCafe && activeCafe.id === cafe.id ? '#f5f5f5' : 'white',
-                                border: activeCafe && activeCafe.id === cafe.id ? 'solid black' : 'none',
+                                border: activeCafe && activeCafe.id === cafe.id ? 'solid #A5BAAC' : 'none',
                             }}
                     >
                         <div className="row g-0">
