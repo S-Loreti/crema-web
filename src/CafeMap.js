@@ -18,8 +18,8 @@ const CafeMap = () => {
     <Map
       mapboxAccessToken={process.env.REACT_APP_MAPBOX_KEY}
       initialViewState={{
-        longitude: -122.1829091,
-        latitude: 37.877712,
+        longitude: -122.2683777,
+        latitude: 37.8844503,
         zoom:9
       }}
       style={{maxWidth: '100%', height: '50vh'}}

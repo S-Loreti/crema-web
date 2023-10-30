@@ -50,7 +50,7 @@ const CafeCard = () => {
                         <div className="row g-0">
                             <div className="col-md-8">
                                 <div className="card-body">
-                                    <h5 className="card-title mb-4" style={{fontSize: "25px", fontFamily: 'Verdana', fontSize: '2rem', fontWeight: '200'}}>
+                                    <h5 className="card-title mb-4" style={{fontSize: "22px", fontFamily: 'Verdana', fontSize: '2rem', fontWeight: '200'}}>
                                             <img width="" height="27px" 
                                                 src={require(`./bean-icon.png`)} />
                                                 {' '}{cafe.cafe_name}

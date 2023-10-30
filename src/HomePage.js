@@ -15,7 +15,7 @@ const HomePage = () => {
                     <h2 style={{ fontSize: '18px', color: '#333', marginBottom: '10px' }}>Café Locator</h2>
                     <h5 style={{ color: '#555', marginBottom: '10px' }}>Find your next cup</h5>
                     <a href="/Locator">
-                        <img style={{ width: '100%', height: 'auto', borderRadius: '10px', marginBottom: '10px' }} src={require(`./Homepage/Map.png`)} alt="Café Locator" />
+                        <img style={{ width: '100%', height: 'auto', borderRadius: '10px', marginBottom: '10px' }} src={require(`./Homepage/Map1.png`)} alt="Café Locator" />
                     </a>
                     <p style={{ color: '#777' }}>Discover coffee shops that have earned a spot on our list.</p>
                 </div>
