@@ -45,7 +45,7 @@ const HomePage = () => {
                     Fruit scones have always held a special place in the hearts of locals and tourists alike. These flaky, buttery delights, brimming with juicy fruits, make for the perfect companion to your morning or afternoon coffee. 
                     We’ve taken on the delightful task of sampling and curating a list of the best in-house made fruit scones in the area. Buckle up, scone lovers, because you’re in for a treat..
                 </p>
-                <a href="/Guide/#scones">read more</a>
+                <a href="/Guide#scones">read more</a>
             </div>
             <div style={{ marginTop: '30px', padding: '30px', backgroundColor: '#ffffff', borderRadius: '10px' }}>
                 <h1 style={{ fontSize: '24px', color: '#333', marginBottom: '20px', fontWeight: 'bold' }}>Guide: Where to Drink Along I-680</h1>
@@ -55,7 +55,7 @@ const HomePage = () => {
                     This stretch of highway, winding its way through the picturesque Diablo Valley, is punctuated with cozy coffee havens waiting to be discovered. 
                     Join us as we embark on a caffeinated adventure along I-680.
                 </p>
-                <a href="/Guide/#680">read more</a>
+                <a href="/Guide#680">read more</a>
             </div>
         </div>
     )

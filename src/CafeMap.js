@@ -2,9 +2,8 @@ import React, {useState, useEffect} from "react"
 import Map, {Marker, Popup} from 'react-map-gl';
 import api from "./api";
 
-const CafeMap = () => {
+const CafeMap = ({ activeCafe, setActiveCafe, scrollToCafe }) => {
   const [cafes, setCafes] = useState([]);
-  const [activeCafe, setActiveCafe] = useState(null);
 
   const fetchCafes = async () => {
     const response = await api.get('/cafes/');
@@ -30,8 +29,11 @@ const CafeMap = () => {
           <Marker 
             longitude={cafe.cafe_long} 
             latitude={cafe.cafe_lat} 
-            color="#9CB2A6"
-            onClick={() => setActiveCafe(cafe)}
+            color={activeCafe && activeCafe.id === cafe.id ? "#FF5733" : "#9CB2A6"}
+            onClick={() => {
+              setActiveCafe(cafe);
+              scrollToCafe(cafe.id);
+            }}
           />
           {activeCafe && activeCafe.id === cafe.id && (
             <Popup

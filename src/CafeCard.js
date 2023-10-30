@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react"
+import React, {useState, useEffect, useRef} from "react"
 import api from "./api";
 import DisplayHours from "./DisplayHours";
 import CafeMap from "./CafeMap";
@@ -7,6 +7,8 @@ import { Link, Phone, Clock } from "@phosphor-icons/react";
 const CafeCard = () => {
     const [cafes, setCafes] = useState([]);
     const [selectedCity, setSelectedCity] = useState('All');
+    const [activeCafe, setActiveCafe] = useState(null);
+    const cafeRefs = useRef({});
     
     const fetchCafes = async () => {
         const response = await api.get('/cafes/');
@@ -15,6 +17,13 @@ const CafeCard = () => {
 
     const handleFilterChange = (cafe_city) => {
         setSelectedCity(cafe_city);
+    };
+
+    const scrollToCafe = (cafeId) => {
+        cafeRefs.current[cafeId].scrollIntoView({ 
+            behavior: 'smooth',
+            block: 'center'
+        });
     };
 
     const filteredCafes = cafes.filter(cafe => selectedCity === 'All' ? true : cafe.cafe_city === selectedCity);
@@ -46,15 +55,26 @@ const CafeCard = () => {
                         <p>{ cafeTotal } Cafés Found</p>
                 </div>
                 {filteredCafes.map((cafe) => (
-                    <div key={cafe.id} className="card mb-3 shadow-sm" style={{ overflow: 'scroll'}}>
+                    <div key={cafe.id}
+                        ref={(el) => cafeRefs.current[cafe.id] = el} 
+                        className="card mb-3 shadow-sm" 
+                        style={{ 
+                                overflow: 'scroll', 
+                                backgroundColor: activeCafe && activeCafe.id === cafe.id ? '#f5f5f5' : 'white',
+                                border: activeCafe && activeCafe.id === cafe.id ? 'solid black' : 'none',
+                            }}
+                    >
                         <div className="row g-0">
                             <div className="col-md-8">
                                 <div className="card-body">
-                                    <h5 className="card-title mb-4" style={{fontSize: "22px", fontFamily: 'Verdana', fontSize: '2rem', fontWeight: '200'}}>
+                                    <h5 className="card-title mb-4" 
+                                        style={{fontSize: "22px", fontFamily: 'Verdana', fontSize: '2rem', fontWeight: '200', cursor: 'pointer'}}
+                                        onClick={() => setActiveCafe(cafe)}
+                                    >
                                             <img width="" height="27px" 
                                                 src={require(`./bean-icon.png`)} />
                                                 {' '}{cafe.cafe_name}
-                                        </h5>
+                                    </h5>
                                     <div className="row">
                                         <div className="col-md-6 mb-1">
                                             <p className="card-text mb-0">{cafe.cafe_address}</p>
@@ -82,7 +102,7 @@ const CafeCard = () => {
                 ))}
             </div>
             <div className="col-4" style={{position: 'fixed', top: '190px', right: '10px', width: 'calc(100% - 66.66667%)', height: '80vh'}}>
-                    <CafeMap />
+                    <CafeMap activeCafe={activeCafe} setActiveCafe={setActiveCafe} scrollToCafe={scrollToCafe}/>
             </div>
         </div>
     </div>
